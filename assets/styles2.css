@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------------------------
-   Global Reset & Typography                                                     
+   Universal Reset & Typography                                                 
 -------------------------------------------------------------------------------- */
 * {
   margin: 0;
@@ -15,7 +15,7 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
-   Top Navigation Bar                                                             
+   Application Header Bar                                                         
 -------------------------------------------------------------------------------- */
 .nav-bar {
   display: flex;
@@ -29,7 +29,7 @@ body {
   height: 50px;
 }
 
-.nav-toggle {
+.hamburger-btn {
   display: none;               /* hidden on desktop; shown in responsive */
   font-size: 24px;
   color: #fff;
@@ -38,7 +38,7 @@ body {
   cursor: pointer;
 }
 
-/* Navigation Links */
+/* Navigation Items */
 .nav-menu ul {
   list-style: none;
   display: flex;
@@ -59,21 +59,21 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
-   Hero Section                                                                    
+   Hero Banner Section                                                            
 -------------------------------------------------------------------------------- */
-.hero-section {
+.hero-banner {
   background-color: #f7f7f7;
   color: #17253F;
   text-align: center;
   padding: 60px 20px;
 }
 
-.hero-section h1 {
+.hero-banner h1 {
   font-size: 2rem;
   margin-bottom: 10px;
 }
 
-.hero-section p {
+.hero-banner p {
   font-size: 1.2rem;
 }
 
@@ -125,7 +125,7 @@ body {
   color: #555;
 }
 
-.btn-action {
+.primary-btn {
   display: inline-block;
   margin: 0 15px 15px 15px;
   padding: 10px 15px;
@@ -136,31 +136,31 @@ body {
   text-align: center;
 }
 
-.btn-action:hover {
+.primary-btn:hover {
   background-color: #0f1f30;   /* slightly darker navy on hover */
 }
 
 /* ---------------------------------------------------------------------------
-   Testimonials Section                                                           
+   Feedback Section                                                                
 -------------------------------------------------------------------------------- */
-.testimonials-section {
+.feedback-section {
   background-color: #fff;
   padding: 40px 20px;
 }
 
-.testimonials-section h2 {
+.feedback-section h2 {
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 20px;
 }
 
-.testimonial {
+.feedback-item {
   max-width: 600px;
   margin: 0 auto 20px auto;
   text-align: center;
 }
 
-.testimonial blockquote {
+.feedback-item blockquote {
   font-style: italic;
   color: #555;
   margin-bottom: 10px;
@@ -168,23 +168,23 @@ body {
   padding-left: 20px;
 }
 
-.testimonial blockquote::before {
+.feedback-item blockquote::before {
   content: "“";
   font-size: 2rem;
   position: absolute;
   left: 0;
   top: -10px;
-  color: #ffffff;  /* match hero-section accent */
+  color: #ffffff;  /* match hero-banner accent */
 }
 
-.testimonial cite {
+.feedback-item cite {
   display: block;
   font-size: 0.9rem;
   color: #777;
 }
 
 /* ---------------------------------------------------------------------------
-   Page Footer                                                                      
+   Footer Section                                                                 
 -------------------------------------------------------------------------------- */
 .footer {
   background-color: #17253F;  /* dark navy */
@@ -195,26 +195,26 @@ body {
   flex-wrap: wrap;
 }
 
-.footer-contact p {
+.footer .contact-info p {
   margin-bottom: 8px;
 }
 
-.footer-links a {
+.footer .links a {
   color: #fff;
   text-decoration: none;
   margin-right: 15px;
   font-size: 0.9rem;
 }
 
-.footer-links a:hover {
+.footer .links a:hover {
   text-decoration: underline;
 }
 
 /* ---------------------------------------------------------------------------
-   Mobile Responsive Tweaks                                                       
+   Mobile Responsiveness                                                            
 -------------------------------------------------------------------------------- */
 @media (max-width: 768px) {
-  /* Collapse nav into toggle */
+  /* Toggle navigation menu */
   .nav-menu ul {
     display: none;
     flex-direction: column;
@@ -222,11 +222,11 @@ body {
     width: 100%;
   }
 
-  .nav-toggle {
+  .hamburger-btn {
     display: block;
   }
 
-  /* Stack service cards */
+  /* Stack service cards vertically */
   .services-grid {
     flex-direction: column;
   }
@@ -235,13 +235,13 @@ body {
     width: 100%;            /* full-width on small screens */
   }
 
-  /* Footer stack */
+  /* Footer layout for mobile */
   .footer {
     flex-direction: column;
     text-align: center;
   }
 
-  .footer-links a {
+  .footer .links a {
     margin: 5px;            /* smaller gaps */
   }
 }
