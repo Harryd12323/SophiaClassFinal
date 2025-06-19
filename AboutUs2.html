@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connect with Us – ABC Fitness Studio</title>
+
+  <!-- contact & subscription logic -->
+  <script src="./assets/storage.js" defer></script>
+  <script src="./assets/script3.js" defer></script>
+
+  <style>
+    /* —— Color Palette —— */
+    :root {
+      --indigo-base: #17253F;
+      --off-white-bg: #F9F9F9;
+      --white-text:  #FFFFFF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--off-white-bg);
+      color: var(--indigo-base);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* —— Top Navigation —— */
+    .top-bar {
+      background: var(--white-text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .top-bar img { height: 40px; }
+    .nav-menu a { margin-left: 1em; font-size: 0.9rem; font-weight: bold; }
+
+    /* —— Main Content —— */
+    main { padding: 2em 1em; max-width: 800px; margin: 0 auto; }
+    section { margin-bottom: 2em; }
+
+    .welcome-section {
+      background: var(--white-text);
+      border-radius: 8px;
+      padding: 2em;
+      text-align: center;
+    }
+    .welcome-section h1 { font-size: 1.5rem; margin-bottom: 0.5em; }
+
+    .hours-list {
+      background: var(--indigo-base);
+      color: var(--white-text);
+      padding: 2em;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .hours-list h2 { margin-bottom: 0.5em; font-size: 1.25rem; }
+    .hours-list ul { list-style: none; margin-top: 1em; }
+    .hours-list li { margin: 0.5em 0; }
+
+    .testimonials {
+      background: var(--white-text);
+      border-radius: 8px;
+      padding: 2em;
+    }
+    .testimonials h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+    .testimonials blockquote { margin: 1em 0; font-style: italic; }
+    .testimonials cite {
+      display: block;
+      text-align: right;
+      font-weight: bold;
+      margin-top: 0.25em;
+    }
+
+    .message-section {
+      background: var(--white-text);
+      border-radius: 8px;
+      padding: 2em;
+    }
+    .message-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+    .message-section form#contact-form input,
+    .message-section form#contact-form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .message-section form#contact-form button {
+      display: block;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
+      background: var(--indigo-base);
+      color: var(--white-text);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .footer-main {
+      background: var(--indigo-base);
+      color: var(--white-text);
+      padding: 1.5em 1em;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .footer-main nav a { margin: 0 0.5em; }
+
+    .newsletter-widget {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .newsletter-widget input {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 200px;
+      max-width: 100%;
+    }
+    .newsletter-widget button {
+      margin-left: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: var(--indigo-base);
+      color: var(--white-text);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .newsletter-widget button:hover { background-color: #0f1f34; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Navigation -->
+  <header class="top-bar">
+    <img src="./assets/LogoNew.png" alt="ABC Fitness Logo">
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="Gallery2.html">Our Offerings</a>
+      <a href="AboutUs2.html">About Us</a>
+      <a href="CustomPage2.html">Events</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="welcome-section">
+      <h1>Welcome to ABC Fitness Studio</h1>
+      <p>Fitness is for everyone—bring dedication and respect.</p>
+    </section>
+
+    <section class="hours-list">
+      <h2>Studio Hours</h2>
+      <ul>
+        <li>Mon–Fri: 6 am–8 pm</li>
+        <li>Sat: 8 am–6 pm</li>
+        <li>Sun: Closed</li>
+      </ul>
+    </section>
+
+    <section class="testimonials">
+      <h2>Success Stories</h2>
+      <blockquote>
+        “I gained 15 lbs of muscle in 4 months with personalized guidance.”
+        <cite>— Jake</cite>
+      </blockquote>
+      <blockquote>
+        “Post-pregnancy, I rebuilt strength and confidence in just 4 months.”
+        <cite>— Lisa</cite>
+      </blockquote>
+    </section>
+
+    <section class="message-section">
+      <h2>Send Us a Message</h2>
+      <form id="contact-form">
+        <input id="name" type="text" placeholder="Your Name" required>
+        <input id="email" type="email" placeholder="Your Email" required>
+        <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer + Newsletter -->
+  <footer class="footer-main">
+    <p>11 ABC Ave, NJ 01010 | info@abcfitness.com | (123) 456‑7890</p>
+    <nav>
+      <a href="#">FAQ</a> |
+      <a href="#">Terms</a> |
+      <a href="#">Privacy</a>
+    </nav>
+
+    <div class="newsletter-widget">
+      <input
+        id="subscribe-email"
+        type="email"
+        placeholder="Your email address"
+        aria-label="Email for subscription"
+      >
+      <button id="subscribe-btn">Subscribe</button>
+    </div>
+  </footer>
+
+</body>
+</html>

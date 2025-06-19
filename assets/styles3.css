@@ -1,0 +1,117 @@
+/* ---------------------------------------------------------------------------
+   Hero Section Styles (mirrors homepage palette & layout)                
+-------------------------------------------------------------------------------- */
+
+/* —— Hero Banner —— */
+.hero-banner {
+    background-color: #373E8B;    /* same as .promo-banner */
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+}
+.hero-banner h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.hero-banner p {
+    font-size: 1.2rem;
+}
+
+/* —— Company Overview / Mission —— */
+.story-section {
+    background-color: #fff;
+    padding: 40px 20px;
+}
+.story-section h2 {
+    color: #17253F;                /* dark navy */
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+.story-section p {
+    color: #333;                   /* main text color */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* —— Staff Area —— */
+.staff-area {
+    background-color: #F7F7F7;     /* light gray body bg */
+    padding: 40px 20px;
+}
+.staff-area h2 {
+    color: #17253F;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.staff-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+.staff-card {
+    background: #fff;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    width: calc(33.333% - 13.333px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+}
+.staff-card img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+.staff-card h3 {
+    margin-bottom: 0.5rem;
+    color: #17253F;
+}
+
+/* —— Reach-Out Section —— */
+.reach-section {
+    background: #fff;
+    padding: 40px 20px;
+}
+.reach-section h2 {
+    color: #17253F;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.inquiry-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.inquiry-form input,
+.inquiry-form textarea {
+    padding: 10px;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.inquiry-form .submit-button {
+    background-color: #17253F;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.inquiry-form .submit-button:hover {
+    background-color: #0F1F30;
+}
+
+/* —— Mobile Responsive —— */
+@media (max-width: 768px) {
+    .staff-list {
+      flex-direction: column;
+    }
+    .staff-card {
+      width: 100%;
+    }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ABC Fitness Studio – Shopping Basket</title>
+
+  <!-- your normal stylesheet -->
+  <link rel="stylesheet" href="./assets/styles2.css">
+  <!-- wires up cart + subscribe handlers only -->
+  <script src="./assets/storage.js" defer></script>
+
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    main { flex: 1; padding: 2rem 1rem; max-width: 800px; margin: 0 auto; }
+    .basket-list {
+      list-style: none; padding: 0; margin: 1rem 0;
+    }
+    .basket-list li {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      border-radius: 4px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    .basket-list img {
+      height: 50px;
+      margin-right: 1rem;
+    }
+
+    .actions-container {
+      display: flex; justify-content: flex-end; gap: 1rem;
+      margin-top: 1rem;
+    }
+    .actions-container button {
+      padding: 0.5rem 1rem;
+      background: #17253F;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .actions-container button:hover {
+      background: #121f34;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="header-bar">
+    <img src="./assets/LogoNew.png" alt="ABC Fitness Logo" class="logo-img">
+    <button class="toggle-menu">☰</button>
+    <nav class="navigation-list">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Gallery2.html">Our Offerings</a></li>
+        <li><a href="AboutUs2.html">About Us</a></li>
+        <li><a href="CustomPage2.html">Events</a></li>
+        <li><a href="Cart2.html">Basket</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Your Shopping Basket</h1>
+    <ul class="basket-list" id="cart-items"></ul>
+
+    <div class="actions-container">
+      <button id="clear-cart-btn">Empty Basket</button>
+      <button id="process-order-btn">Checkout</button>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="footer-main">
+    <!-- footer content with subscribe widget -->
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const listEl = document.getElementById('cart-items');
+      const items = JSON.parse(sessionStorage.getItem('cart') || '[]');
+
+      if (items.length) {
+        listEl.innerHTML = items.map(product => {
+          let imgPath;
+          switch (product.id) {
+            case 'water-bottle':
+              imgPath = './assets/Client2_WaterBottle.png';
+              break;
+            case 'tshirt':
+              imgPath = './assets/Client2_TeeShirt.png';
+              break;
+            case 'yogamat':
+              imgPath = './assets/Client2_YogaMat.png';
+              break;
+            default:
+              imgPath = '';
+          }
+          return `
+            <li>
+              <img src="${imgPath}" alt="${product.name}">
+              <strong>${product.name}</strong>
+            </li>`;
+        }).join('');
+      } else {
+        listEl.innerHTML = '<li>Your basket is empty.</li>';
+      }
+    });
+  </script>
+</body>
+</html>
