@@ -1,27 +1,25 @@
-// assets/scriptAlerts.js
-// Provides user feedback for cart additions and newsletter sign-up
-
 document.addEventListener('DOMContentLoaded', () => {
-  // ==== Cart Notification Handler ====
-  document.querySelectorAll('.add-to-cart-btn').forEach(itemBtn => {
-    itemBtn.addEventListener('click', () => {
-      alert('Product successfully added to your cart.');
+  // —— Add-to-Cart buttons ——
+  document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      alert('Item added to the cart');
     });
   });
 
-  // ==== Newsletter Subscription Handler ====
-  const newsBtn    = document.getElementById('subscribe-btn');
-  const emailField = document.getElementById('subscribe-email');
+  // —— Subscribe feature ——
+  const subscribeBtn = document.getElementById('subscribe-btn');
+  const emailInput  = document.getElementById('subscribe-email');
 
-  if (newsBtn && emailField) {
-    newsBtn.addEventListener('click', () => {
-      const address = emailField.value.trim();
-      if (address) {
-        alert('You’ve been subscribed! Thanks for joining.');
-        emailField.value = '';
+  if (subscribeBtn && emailInput) {
+    subscribeBtn.addEventListener('click', () => {
+      const email = emailInput.value.trim();
+      if (email) {
+        alert('Thank you for subscribing');
+        emailInput.value = '';
       } else {
-        alert('Please provide a valid email to subscribe.');
+        alert('Please enter an email address');
       }
     });
   }
 });
+
