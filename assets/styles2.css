@@ -28,9 +28,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--white);
+  background-color: var(--nourish-navy);
   padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 .header-logo {
   height: 50px;
@@ -38,7 +37,7 @@ body {
 .menu-toggle {
   display: none;
   font-size: 24px;
-  color: var(--nourish-navy);
+  color: var(--white);
   background: none;
   border: none;
   cursor: pointer;
@@ -54,7 +53,7 @@ body {
   font-family: Calibri, sans-serif;
   font-size: 16px;
   font-weight: bold;
-  color: var(--nourish-navy);
+  color: var(--white);
   text-decoration: none;
 }
 .main-navigation a:hover {
@@ -62,7 +61,7 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
-   Promotional Notice (Hero Section)
+   Promo Banner (Hero Section)
 -------------------------------------------------------------------------------- */
 .promo-banner {
   background-color: var(--white);
@@ -135,7 +134,7 @@ body {
   display: inline-block;
   margin: 0 15px 15px;
   padding: 10px 15px;
-  background-color: var(--nourish-navy);
+  background-color: var(--bootcamp-blue);
   color: var(--white);
   text-decoration: none;
   border-radius: 4px;
@@ -245,3 +244,107 @@ body {
     margin: 5px;
   }
 }
+```
+
+---
+
+**Updated HTML (index.html)**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ABC Fitness Studio</title>
+  <link rel="stylesheet" href="./assets/styles2.css">
+  <script src="./assets/storage.js" defer></script>
+  <script src="./assets/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <img src="./assets/LogoNew.png" alt="ABC Fitness Studio Logo" class="header-logo">
+    <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+    <nav class="main-navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Gallery2.html">Our Classes</a></li>
+        <li><a href="AboutUs2.html">About Us</a></li>
+        <li><a href="CustomPage2.html">Events</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Promotional Notice -->
+  <section class="promo-banner">
+    <h1>Kickstart Your Fitness with Half-Price Membership!</h1>
+    <p>Exclusive offer for new members. Join today and save big.</p>
+  </section>
+
+  <!-- Offerings -->
+  <section id="offerings" class="offerings-section">
+    <h2>Our Services</h2>
+    <div class="offer-cards">
+      <article class="card">
+        <img src="./assets/Client2_IndividualKickboxing.png" alt="One-on-One Coaching">
+        <h3>Personal Training</h3>
+        <p>Tailored sessions focused on your goals.</p>
+        <a href="Gallery2.html" class="action-btn">Learn More</a>
+      </article>
+      <article class="card">
+        <img src="./assets/Client2_GroupPilates.png" alt="Group Pilates">
+        <h3>Group Workouts</h3>
+        <p>Dynamic classes for every fitness level.</p>
+        <a href="Gallery2.html" class="action-btn">Sign Up</a>
+      </article>
+      <article class="card">
+        <img src="./assets/Client2_WaterBottle.png" alt="Branded Water Bottle">
+        <h3>Merch & Gear</h3>
+        <p>Gear up for home workouts with our merch.</p>
+        <a href="Gallery2.html" class="action-btn">Shop Now</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Member Reviews -->
+  <section id="reviews" class="reviews-section">
+    <h2>Success Stories</h2>
+    <div class="review">
+      <blockquote>“Joining ABC Fitness Studio changed my life. The coaches really push me to be my best.”</blockquote>
+      <cite>— Alex P.</cite>
+    </div>
+    <div class="review">
+      <blockquote>“Amazing atmosphere and personalized support. I feel more confident and strong.”</blockquote>
+      <cite>— Jamie L.</cite>
+    </div>
+  </section>
+
+  <!-- Footer with Subscribe -->
+  <footer id="footer-info" class="site-footer">
+    <div class="contact-details">
+      <p>Address: 11 ABC Ave, New Jersey 01010</p>
+      <p>Email: info@abcfitness.com</p>
+      <p>Phone: (123) 456-7890</p>
+    </div>
+    <div class="legal-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="support.html">Support</a>
+    </div>
+
+    <div class="subscribe-section">
+      <input
+        id="subscribe-email"
+        type="email"
+        placeholder="Your email address"
+        aria-label="Email for subscription"
+      >
+      <button id="subscribe-btn" class="action-btn">Subscribe</button>
+    </div>
+  </footer>
+
+</body>
+</html>
+```
