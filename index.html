@@ -5,17 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ABC Fitness Studio</title>
   <link rel="stylesheet" href="./assets/styles2.css">
-  <!-- subscribe logic -->
   <script src="./assets/storage.js" defer></script>
   <script src="./assets/script.js" defer></script>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <img src="./assets/LogoNew.png" alt="ABC Fit Logo" class="logo">
-    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
-    <nav class="nav-menu">
+  <!-- Site Header -->
+  <header class="site-header">
+    <img src="./assets/LogoNew.png" alt="ABC Fitness Studio Logo" class="header-logo">
+    <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+    <nav class="main-navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="Gallery2.html">Our Classes</a></li>
@@ -25,72 +24,71 @@
     </nav>
   </header>
 
-  <!-- Highlight section -->
-  <section class="highlight">
+  <!-- Promotional Notice -->
+  <section class="promo-banner">
     <h1>Kickstart Your Fitness with Half-Price Membership!</h1>
     <p>Exclusive offer for new members. Join today and save big.</p>
   </section>
 
-  <!-- Services -->
-  <section id="services" class="services">
+  <!-- Offerings -->
+  <section id="offerings" class="offerings-section">
     <h2>Our Services</h2>
-    <div class="services-grid">
-      <article class="service-item">
+    <div class="offer-cards">
+      <article class="card">
         <img src="./assets/Client2_IndividualKickboxing.png" alt="One-on-One Coaching">
         <h3>Personal Training</h3>
         <p>Tailored sessions focused on your goals.</p>
-        <a href="Gallery2.html" class="btn-link">Learn More</a>
+        <a href="Gallery2.html" class="action-btn">Learn More</a>
       </article>
-      <article class="service-item">
+      <article class="card">
         <img src="./assets/Client2_GroupPilates.png" alt="Group Pilates">
         <h3>Group Workouts</h3>
         <p>Dynamic classes for every fitness level.</p>
-        <a href="Gallery2.html" class="btn-link">Sign Up</a>
+        <a href="Gallery2.html" class="action-btn">Sign Up</a>
       </article>
-      <article class="service-item">
+      <article class="card">
         <img src="./assets/Client2_WaterBottle.png" alt="Branded Water Bottle">
         <h3>Merch & Gear</h3>
         <p>Gear up for home workouts with our merch.</p>
-        <a href="Gallery2.html" class="btn-link">Shop Now</a>
+        <a href="Gallery2.html" class="action-btn">Shop Now</a>
       </article>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section id="testimonials" class="testimonials">
+  <!-- Member Reviews -->
+  <section id="reviews" class="reviews-section">
     <h2>Success Stories</h2>
-    <div class="testimonial">
+    <div class="review">
       <blockquote>“Joining ABC Fitness Studio changed my life. The coaches really push me to be my best.”</blockquote>
       <cite>— Alex P.</cite>
     </div>
-    <div class="testimonial">
+    <div class="review">
       <blockquote>“Amazing atmosphere and personalized support. I feel more confident and strong.”</blockquote>
       <cite>— Jamie L.</cite>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer id="footer-info" class="footer">
-    <div class="contact-info">
+  <!-- Footer with Subscribe -->
+  <footer id="info" class="site-footer">
+    <div class="contact-details">
       <p>Address: 11 ABC Ave, New Jersey 01010</p>
       <p>Email: info@abcfitness.com</p>
       <p>Phone: (123) 456-7890</p>
     </div>
-    <div class="links">
+    <div class="legal-links">
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Use</a>
       <a href="support.html">Support</a>
     </div>
 
-    <!-- Newsletter signup -->
-    <div class="newsletter">
+    <div class="subscribe-section">
       <input
-        id="newsletter-email"
+        id="subscribe-email"
         type="email"
-        placeholder="Enter your email"
-        aria-label="Email for newsletter"
+        placeholder="Your email address"
+        aria-label="Email for subscription"
       >
-      <button id="newsletter-btn" class="btn-action">Subscribe</button>
+      <button id="subscribe-btn" class="btn">Subscribe</button>
     </div>
   </footer>
 
