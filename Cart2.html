@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ABC Fitness Studio – Shopping Basket</title>
+  <title>ABC Fitness Studio – Your Cart</title>
 
   <!-- your normal stylesheet -->
   <link rel="stylesheet" href="./assets/styles2.css">
@@ -11,104 +11,144 @@
   <script src="./assets/storage.js" defer></script>
 
   <style>
-    html, body { height: 100%; margin: 0; }
-    body { display: flex; flex-direction: column; min-height: 100vh; }
-    main { flex: 1; padding: 2rem 1rem; max-width: 800px; margin: 0 auto; }
-    .basket-list {
-      list-style: none; padding: 0; margin: 1rem 0;
+    :root {
+      --nourish-navy:  #001F3F;
+      --bootcamp-blue: #20458E;
+      --boxjump-blue:  #155EBC;
+      --wellness-gray: #D3D3D3;
+      --white:         #FFFFFF;
     }
-    .basket-list li {
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Typography Option 2 Defaults */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Calibri, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      background-color: var(--wellness-gray);
+      color: #333333;
+    }
+    h1 {
+      font-family: Arial, sans-serif;
+      font-size: 30px;
+      font-weight: bold;
+      color: var(--nourish-navy);
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    #cart-items {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    #cart-items li {
       display: flex;
       align-items: center;
-      background: #fff;
+      background: var(--white);
       padding: 0.75rem 1rem;
       margin-bottom: 0.5rem;
       border-radius: 4px;
       box-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
-    .basket-list img {
+    #cart-items img {
       height: 50px;
       margin-right: 1rem;
     }
 
-    .actions-container {
-      display: flex; justify-content: flex-end; gap: 1rem;
+    .cart-actions {
+      text-align: center;
       margin-top: 1rem;
     }
-    .actions-container button {
-      padding: 0.5rem 1rem;
-      background: #17253F;
-      color: #fff;
+    .cart-actions button {
+      font: 16px Calibri, sans-serif;
+      background-color: var(--bootcamp-blue);
+      color: var(--white);
       border: none;
       border-radius: 4px;
+      padding: 0.5rem 1rem;
       cursor: pointer;
+      margin: 0 0.5rem;
     }
-    .actions-container button:hover {
-      background: #121f34;
+    .cart-actions button:hover {
+      background-color: var(--boxjump-blue);
     }
+
+    /* Footer placeholder remains per external stylesheet */
   </style>
 </head>
 <body>
 
-  <!-- Top Navigation -->
-  <header class="header-bar">
-    <img src="./assets/LogoNew.png" alt="ABC Fitness Logo" class="logo-img">
-    <button class="toggle-menu">☰</button>
-    <nav class="navigation-list">
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <img src="./assets/LogoNew.png" alt="Logo" class="header-logo">
+    <button class="menu-toggle">☰</button>
+    <nav class="main-navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="Gallery2.html">Our Offerings</a></li>
         <li><a href="AboutUs2.html">About Us</a></li>
         <li><a href="CustomPage2.html">Events</a></li>
-        <li><a href="Cart2.html">Basket</a></li>
+        <li><a href="Cart2.html">Cart</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h1>Your Shopping Basket</h1>
-    <ul class="basket-list" id="cart-items"></ul>
+    <h1>Your Shopping Cart</h1>
+    <ul id="cart-items"></ul>
 
-    <div class="actions-container">
-      <button id="clear-cart-btn">Empty Basket</button>
-      <button id="process-order-btn">Checkout</button>
+    <div class="cart-actions">
+      <button id="clear-cart-btn">Clear Cart</button>
+      <button id="process-order-btn">Process Order</button>
     </div>
   </main>
 
-  <!-- Site Footer -->
-  <footer class="footer-main">
-    <!-- footer content with subscribe widget -->
+  <!-- Footer / Subscribe -->
+  <footer class="site-footer">
+    <!-- …your footer markup with subscribe… -->
   </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const listEl = document.getElementById('cart-items');
-      const items = JSON.parse(sessionStorage.getItem('cart') || '[]');
+      const container = document.getElementById('cart-items');
+      const cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
 
-      if (items.length) {
-        listEl.innerHTML = items.map(product => {
-          let imgPath;
-          switch (product.id) {
+      if (cart.length) {
+        container.innerHTML = cart.map(item => {
+          let imgSrc;
+          switch (item.id) {
             case 'water-bottle':
-              imgPath = './assets/Client2_WaterBottle.png';
+              imgSrc = './assets/Client2_WaterBottle.png';
               break;
             case 'tshirt':
-              imgPath = './assets/Client2_TeeShirt.png';
+              imgSrc = './assets/Client2_TeeShirt.png';
               break;
             case 'yogamat':
-              imgPath = './assets/Client2_YogaMat.png';
+              imgSrc = './assets/Client2_YogaMat.png';
               break;
             default:
-              imgPath = '';
+              imgSrc = '';
           }
           return `
             <li>
-              <img src="${imgPath}" alt="${product.name}">
-              <strong>${product.name}</strong>
+              <img src="${imgSrc}" alt="${item.name}">
+              <strong>${item.name}</strong>
             </li>`;
         }).join('');
       } else {
-        listEl.innerHTML = '<li>Your basket is empty.</li>';
+        container.innerHTML = '<li>Your cart is empty.</li>';
       }
     });
   </script>

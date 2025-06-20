@@ -11,25 +11,56 @@
   <script src="./assets/script2.js" defer></script>
 
   <style>
-    /* —— Normalize & Box Sizing —— */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    /* —— Theme Colors —— */
+    /* —— Color Palette 2 —— */
     :root {
-      --dark-blue: #17253F;
-      --white:     #ffffff;
-      --off-white: #f7f7f7;
-      --text-gray: #333333;
+      --nourish-navy:  #001F3F;
+      --bootcamp-blue: #20458E;
+      --boxjump-blue:  #155EBC;
+      --wellness-gray: #D3D3D3;
+      --white:         #FFFFFF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+
+    /* —— Typography Option 2 Defaults —— */
+    body {
+      font-family: Calibri, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      background: var(--wellness-gray);
+      color: #333333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+    h1.title-main {
+      font-family: Arial, sans-serif;
+      font-size: 30px;
+      font-weight: bold;
+      color: var(--nourish-navy);
+      text-align: center;
+      margin: 2rem 0 1.5rem;
+    }
+    h2 {
+      font-family: Arial, sans-serif;
+      font-size: 25px;
+      font-weight: bold;
+      color: var(--nourish-navy);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .subtitle {
+      font-family: Comfortaa, sans-serif;
+      font-size: 15px;
+    }
+    p, li, .navigation-list a, .header-bar .toggle-menu {
+      font-family: Calibri, sans-serif;
+      font-size: 16px;
+      color: #333333;
     }
 
-    /* —— Typography & Base Styles —— */
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--off-white);
-      color: var(--text-gray);
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
+    a { text-decoration: none; color: inherit; }
 
     /* —— Top Navigation —— */
     .header-bar {
@@ -43,7 +74,7 @@
     .header-bar .logo-img { height: 50px; }
     .header-bar .toggle-menu {
       font-size: 1.5rem;
-      color: var(--dark-blue);
+      color: var(--nourish-navy);
       background: none;
       border: none;
       cursor: pointer;
@@ -53,28 +84,20 @@
       gap: 1rem;
       list-style: none;
     }
-    .navigation-list a { font-weight: bold; }
+    .navigation-list a {
+      font-weight: bold;
+    }
 
     /* —— Content Wrapper —— */
     .content-area {
       max-width: 800px;
       margin: 2rem auto;
       padding: 0 1rem;
-    }
-    .title-main {
-      text-align: center;
-      color: var(--dark-blue);
-      font-size: 1.75rem;
-      margin-bottom: 1.5rem;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      flex: 1;
     }
 
-    /* —— Merchandise Section —— */
-    .shop-section h2 {
-      text-align: center;
-      color: var(--dark-blue);
-      margin-bottom: 1rem;
-    }
+    /* —— Shop Merchandise —— */
+    
     .shop-grid {
       display: flex;
       flex-direction: column;
@@ -88,15 +111,18 @@
       text-align: center;
     }
     .item-card img { height: 100px; margin-bottom: 0.75rem; }
-    .item-card button {
-      background: var(--dark-blue);
+    .cart-btn {
+      font: 16px Calibri, sans-serif;
+      background: var(--bootcamp-blue);
       color: var(--white);
       border: none;
       padding: 0.5rem 1rem;
       border-radius: 4px;
       cursor: pointer;
     }
-    .item-card button:hover { background: #121f34; }
+    .cart-btn:hover {
+      background: var(--boxjump-blue);
+    }
 
     hr { border: 0; border-top: 1px solid #ccc; margin: 2rem 0; }
 
@@ -115,16 +141,20 @@
       text-align: center;
     }
     .info-panel h3 {
-      color: var(--dark-blue);
+      font-family: Arial, sans-serif;
+      font-size: 25px;
+      font-weight: bold;
+      color: var(--nourish-navy);
       margin-bottom: 0.5rem;
     }
-    .info-panel p { font-size: 0.95rem; }
+    .info-panel p { font-size: 16px; }
 
     /* —— Page Footer —— */
     .footer-main {
       background: var(--white);
       padding: 2rem 1rem;
-      font-size: 0.9rem;
+      font-family: Calibri, sans-serif;
+      font-size: 16px;
       margin-top: 2rem;
     }
     .footer-grid {
@@ -135,9 +165,11 @@
       margin: 0 auto;
     }
     .footer-block h4 {
-      color: var(--dark-blue);
-      margin-bottom: 0.5rem;
+      font-family: Arial, sans-serif;
+      font-size: 25px;
       font-weight: bold;
+      color: var(--nourish-navy);
+      margin-bottom: 0.5rem;
     }
     .footer-block p, .footer-block a { margin-bottom: 0.25rem; }
     .newsletter-area {
@@ -150,17 +182,18 @@
       border-radius: 4px;
       width: 200px;
       max-width: 100%;
+      font: 16px Calibri, sans-serif;
     }
     .newsletter-area button {
-      margin-left: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: var(--dark-blue);
+      font: 16px Calibri, sans-serif;
+      background: var(--bootcamp-blue);
       color: var(--white);
       border: none;
+      padding: 0.5rem 1rem;
       border-radius: 4px;
       cursor: pointer;
     }
-    .newsletter-area button:hover { background: #121f34; }
+    .newsletter-area button:hover { background: var(--boxjump-blue); }
 
     @media (min-width: 600px) {
       nav { display: flex; }

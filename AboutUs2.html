@@ -3,149 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Connect with Us – ABC Fitness Studio</title>
+  <title>ABC Fitness Studio – Contact Us</title>
 
-  <!-- contact & subscription logic -->
+  <!-- 1) exactly one line to load storage.js -->
   <script src="./assets/storage.js" defer></script>
   <script src="./assets/script3.js" defer></script>
 
   <style>
-    /* —— Color Palette —— */
     :root {
-      --indigo-base: #17253F;
-      --off-white-bg: #F9F9F9;
-      --white-text:  #FFFFFF;
+      --nourish-navy:  #001F3F;
+      --bootcamp-blue: #20458E;
+      --boxjump-blue:  #155EBC;
+      --wellness-gray: #D3D3D3;
+      --white:         #FFFFFF;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* Typography Option 2 defaults */
     body {
-      font-family: Arial, sans-serif;
-      background-color: var(--off-white-bg);
-      color: var(--indigo-base);
-      line-height: 1.6;
+      font-family: Calibri, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      background-color: var(--wellness-gray);
+      color: #333333;
     }
+    h1 { font-family: Arial, sans-serif; font-size: 30px; font-weight: bold; }
+    h2 { font-family: Arial, sans-serif; font-size: 25px; font-weight: bold; }
+    .subtitle, .greet-section p { font-family: Comfortaa, sans-serif; font-size: 15px; }
+    blockquote { font-family: Calibri, sans-serif; font-size: 20px; font-style: italic; }
+    cite { font-family: Calibri, sans-serif; font-size: 16px; font-weight: bold; }
+    p, ul, li { font-family: Calibri, sans-serif; font-size: 16px; }
+    .caption { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; }
+
     a { text-decoration: none; color: inherit; }
 
-    /* —— Top Navigation —— */
-    .top-bar {
-      background: var(--white-text);
+    /* Header */
+    .header-container {
+      background: var(--white);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1em;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .top-bar img { height: 40px; }
-    .nav-menu a { margin-left: 1em; font-size: 0.9rem; font-weight: bold; }
+    .header-container img { height: 40px; }
+    .nav-links a { margin-left: 1em; font-size: 16px; color: var(--nourish-navy); }
 
-    /* —— Main Content —— */
-    main { padding: 2em 1em; max-width: 800px; margin: 0 auto; }
+    main { padding: 2em 1em; }
     section { margin-bottom: 2em; }
 
-    .welcome-section {
-      background: var(--white-text);
+    .greet-section {
+      background: var(--white);
       border-radius: 8px;
       padding: 2em;
-      text-align: center;
     }
-    .welcome-section h1 { font-size: 1.5rem; margin-bottom: 0.5em; }
+    .greet-section h1 { text-align: center; margin-bottom: 0.5em; }
 
-    .hours-list {
-      background: var(--indigo-base);
-      color: var(--white-text);
+    .schedule {
+      background-color: var(--nourish-navy);
+      color: var(--white);
       padding: 2em;
       border-radius: 8px;
       text-align: center;
     }
-    .hours-list h2 { margin-bottom: 0.5em; font-size: 1.25rem; }
-    .hours-list ul { list-style: none; margin-top: 1em; }
-    .hours-list li { margin: 0.5em 0; }
+    .schedule h2 { margin-bottom: 0.5em; }
+    .schedule ul { list-style: none; margin-top: 1em; }
+    .schedule li { margin: 0.5em 0; }
 
-    .testimonials {
-      background: var(--white-text);
+    .feedback {
+      background: var(--white);
       border-radius: 8px;
       padding: 2em;
     }
-    .testimonials h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1em;
-      text-align: center;
-    }
-    .testimonials blockquote { margin: 1em 0; font-style: italic; }
-    .testimonials cite {
-      display: block;
-      text-align: right;
-      font-weight: bold;
-      margin-top: 0.25em;
-    }
+    .feedback h2 { font-size: 25px; margin-bottom: 1em; text-align: center; }
+    .feedback blockquote { margin: 1em 0; }
+    .feedback cite { display: block; text-align: right; margin-top: 0.5em; }
 
-    .message-section {
-      background: var(--white-text);
+    .contact-form {
+      background: var(--white);
       border-radius: 8px;
       padding: 2em;
     }
-    .message-section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1em;
-      text-align: center;
-    }
-    .message-section form#contact-form input,
-    .message-section form#contact-form textarea {
+    .contact-form input,
+    .contact-form textarea {
       width: 100%;
       padding: 0.5rem;
       margin-bottom: 1rem;
       border: 1px solid #ccc;
       border-radius: 4px;
+      font: 16px Calibri, sans-serif;
     }
-    .message-section form#contact-form button {
-      display: block;
-      margin: 0 auto;
+    .contact-form button {
       padding: 0.5rem 1rem;
-      background: var(--indigo-base);
-      color: var(--white-text);
+      background: var(--bootcamp-blue);
+      color: var(--white);
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      font: 16px Calibri, sans-serif;
+    }
+    .contact-form button:hover {
+      background: var(--boxjump-blue);
     }
 
-    .footer-main {
-      background: var(--indigo-base);
-      color: var(--white-text);
+    .site-footer {
+      background: var(--nourish-navy);
+      color: var(--white);
       padding: 1.5em 1em;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 16px;
+      font-family: Calibri, sans-serif;
     }
-    .footer-main nav a { margin: 0 0.5em; }
+    .site-footer nav { margin-top: 0.5em; }
+    .site-footer nav a { margin: 0 0.5em; color: var(--white); font-size: 11px; font-weight: bold; }
 
-    .newsletter-widget {
-      margin-top: 2rem;
-      text-align: center;
+    .subscribe-section {
+      margin-top: 2rem; text-align: center;
     }
-    .newsletter-widget input {
+    .subscribe-section input {
       padding: 0.5rem;
       border: 1px solid #ccc;
       border-radius: 4px;
       width: 200px;
       max-width: 100%;
+      font: 16px Calibri, sans-serif;
     }
-    .newsletter-widget button {
+    .subscribe-section button {
       margin-left: 0.5rem;
       padding: 0.5rem 1rem;
-      background-color: var(--indigo-base);
-      color: var(--white-text);
+      background-color: var(--nourish-navy);
+      color: var(--white);
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      font: 16px Calibri, sans-serif;
     }
-    .newsletter-widget button:hover { background-color: #0f1f34; }
+    .subscribe-section button:hover {
+      background-color: var(--boxjump-blue);
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- Top Navigation -->
-  <header class="top-bar">
+  <!-- Header -->
+  <header class="header-container">
     <img src="./assets/LogoNew.png" alt="ABC Fitness Logo">
-    <nav class="nav-menu">
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="Gallery2.html">Our Offerings</a>
       <a href="AboutUs2.html">About Us</a>
@@ -154,33 +157,34 @@
   </header>
 
   <main>
-    <section class="welcome-section">
+    <section class="greet-section">
       <h1>Welcome to ABC Fitness Studio</h1>
-      <p>Fitness is for everyone—bring dedication and respect.</p>
+      <p class="subtitle">Fitness is inclusive—bring your dedication and respect.</p>
     </section>
 
-    <section class="hours-list">
-      <h2>Studio Hours</h2>
+    <section class="schedule">
+      <h2>Our Hours</h2>
       <ul>
-        <li>Mon–Fri: 6 am–8 pm</li>
-        <li>Sat: 8 am–6 pm</li>
-        <li>Sun: Closed</li>
+        <li>Monday–Friday: 6am–8pm</li>
+        <li>Saturday: 8am–6pm</li>
+        <li>Sunday: Closed</li>
       </ul>
     </section>
 
-    <section class="testimonials">
-      <h2>Success Stories</h2>
+    <section class="feedback">
+      <h2>Client Success Stories</h2>
       <blockquote>
-        “I gained 15 lbs of muscle in 4 months with personalized guidance.”
+        “I gained 15 lbs of muscle in 4 months with personalized nutrition.”  
         <cite>— Jake</cite>
       </blockquote>
       <blockquote>
-        “Post-pregnancy, I rebuilt strength and confidence in just 4 months.”
+        “After pregnancy, I regained strength and confidence in just 4 months.”  
         <cite>— Lisa</cite>
       </blockquote>
     </section>
 
-    <section class="message-section">
+    <!-- 2) make sure form has id="contact-form" -->
+    <section class="contact-form">
       <h2>Send Us a Message</h2>
       <form id="contact-form">
         <input id="name" type="text" placeholder="Your Name" required>
@@ -191,16 +195,17 @@
     </section>
   </main>
 
-  <!-- Footer + Newsletter -->
-  <footer class="footer-main">
-    <p>11 ABC Ave, NJ 01010 | info@abcfitness.com | (123) 456‑7890</p>
+  <!-- Footer + Subscribe -->
+  <footer class="site-footer">
+    <p>11 ABC Ave, NJ 01010 | info@abcfitness.com | (123) 456-7890</p>
     <nav>
       <a href="#">FAQ</a> |
       <a href="#">Terms</a> |
       <a href="#">Privacy</a>
     </nav>
 
-    <div class="newsletter-widget">
+    <!-- 3) subscribe widget with correct IDs -->
+    <div class="subscribe-section">
       <input
         id="subscribe-email"
         type="email"

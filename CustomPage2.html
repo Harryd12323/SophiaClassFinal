@@ -10,98 +10,163 @@
   <script src="./assets/script4.js" defer></script>
 
   <style>
-    /* —— Theme Colors —— */
+    /* —— Color Palette 2 —— */
     :root {
-      --primary-dark: #17253F;
-      --white-base:   #ffffff;
-      --neutral-bg:   #f7f7f7;
-      --text-base:    #333333;
+      --nourish-navy:  #001F3F;
+      --bootcamp-blue: #20458E;
+      --boxjump-blue:  #155EBC;
+      --wellness-gray: #D3D3D3;
+      --white:         #FFFFFF;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; }
+
+    /* —— Typography Option 2 Defaults —— */
     body {
-      display: flex; flex-direction: column; min-height: 100vh;
-      font-family: Arial, sans-serif;
-      background-color: var(--neutral-bg);
-      color: var(--text-base);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Calibri, sans-serif;
+      font-size: 16px;
       line-height: 1.5;
+      background-color: var(--wellness-gray);
+      color: #333333;
     }
+    h1.title-main {
+      font-family: Arial, sans-serif;
+      font-size: 30px;
+      font-weight: bold;
+      color: var(--nourish-navy);
+      text-align: center;
+      margin: 1rem 0;
+    }
+    h2 {
+      font-family: Arial, sans-serif;
+      font-size: 25px;
+      font-weight: bold;
+      color: var(--nourish-navy);
+      margin-bottom: 0.5rem;
+    }
+    p, li {
+      font-family: Calibri, sans-serif;
+      font-size: 16px;
+      color: #333333;
+    }
+
     a { text-decoration: none; color: inherit; }
 
-    /* —— Top Bar —— */
+    /* —— Top Navigation Bar —— */
     .header-bar {
-      background: var(--white-base);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .header-bar .logo-img { height: 40px; }
     .header-bar nav a {
-      margin-left: 1.5rem; font-weight: bold; color: var(--primary-dark);
+      margin-left: 1.5rem;
+      font-family: Calibri, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--nourish-navy);
     }
 
-    /* —— Content Area —— */
+    /* —— Main Content Area —— */
     .content-area {
-      flex: 1; max-width: 800px; margin: 2rem auto; padding: 0 1rem;
-    }
-    .title-main {
-      text-align: center; color: var(--primary-dark);
-      font-size: 1.75rem; margin-bottom: 1.5rem;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      flex: 1;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
     /* —— Event Blocks —— */
     .event-block {
       margin-bottom: 2.5rem;
     }
-    .event-block h2 {
-      color: var(--primary-dark); font-size: 1.25rem;
-      margin-bottom: 0.5rem; font-weight: 600;
-    }
+    /* Removed empty .event-block h2 rule to satisfy linting */
     .event-block p {
-      font-size: 1.1rem; margin-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
     }
 
-    /* —— Call to Action —— */
+    /* —— Call-to-Action Button —— */
     .action-wrapper {
-      display: flex; justify-content: center; margin: 2rem 0;
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
     }
     .action-btn {
-      background: var(--primary-dark); color: var(--white-base);
-      border: none; padding: 0.75rem 1.5rem; border-radius: 999px;
-      font-size: 1rem; cursor: pointer; transition: background-color 0.2s;
+      font: 16px Calibri, sans-serif;
+      background: var(--bootcamp-blue);
+      color: var(--white);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background-color 0.2s;
     }
-    .action-btn:hover { background: #0f1f34; }
+    .action-btn:hover {
+      background: var(--boxjump-blue);
+    }
 
-    /* —— Footer —— */
+    /* —— Footer Area —— */
     .footer-main {
-      background: var(--white-base); padding: 2rem 1rem; font-size: 0.9rem;
+      background: var(--white);
+      padding: 2rem 1rem;
+      font-family: Calibri, sans-serif;
+      font-size: 16px;
     }
     .footer-grid {
-      display: flex; flex-direction: column; gap: 1.5rem;
-      max-width: 1200px; margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .footer-block h4 {
-      font-size: 1.25rem; color: var(--primary-dark);
-      margin-bottom: 0.5rem; font-weight: bold;
+      font-family: Arial, sans-serif;
+      font-size: 25px;
+      font-weight: bold;
+      color: var(--nourish-navy);
+      margin-bottom: 0.5rem;
     }
     .footer-block p, .footer-block a {
-      display: block; margin-bottom: 0.25rem;
+      display: block;
+      margin-bottom: 0.25rem;
+      font-family: Calibri, sans-serif;
+      font-size: 16px;
+      color: #333333;
     }
 
     /* —— Newsletter Signup —— */
     .newsletter-area {
-      margin-top: 1.5rem; display: flex; justify-content: center; gap: 0.5rem;
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
     }
     .newsletter-area input {
-      padding: 0.5rem; border: 1px solid #ccc;
-      border-radius: 4px; width: 200px; max-width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 200px;
+      max-width: 100%;
+      font: 16px Calibri, sans-serif;
     }
     .newsletter-area button {
-      background: var(--primary-dark); color: var(--white-base);
-      border: none; padding: 0.5rem 1rem; border-radius: 4px;
+      font: 16px Calibri, sans-serif;
+      background: var(--bootcamp-blue);
+      color: var(--white);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
       cursor: pointer;
     }
-    .newsletter-area button:hover { background: #0f1f34; }
+    .newsletter-area button:hover {
+      background: var(--boxjump-blue);
+    }
   </style>
 </head>
 <body>
@@ -123,30 +188,20 @@
 
     <div class="event-block">
       <h2>Charity 5K Run – March 2025</h2>
-      <p>
-        Lace-up for our annual charity run to support youth fitness programs! Enjoy a fun 5K
-        course, followed by healthy snacks and live fitness demos at the finish line.
-      </p>
+      <p>Lace-up for our annual charity run to support youth fitness programs! Enjoy a fun 5K course, followed by healthy snacks and live fitness demos at the finish line.</p>
     </div>
 
     <div class="event-block">
       <h2>Family Fitness Fair – April 2025</h2>
-      <p>
-        Gather the family for obstacle challenges, kid-friendly yoga, and interactive booths.
-        Free entry with prizes for top performances—fun for all ages!
-      </p>
+      <p>Gather the family for obstacle challenges, kid-friendly yoga, and interactive booths. Free entry with prizes for top performances—fun for all ages!</p>
     </div>
 
     <div class="event-block">
       <h2>Park Clean-Up & BBQ – June 2025</h2>
-      <p>
-        Join us to spruce up local parks. Then unwind with a group stretch session and community
-        barbecue celebrating our efforts to keep the neighborhood healthy and green.
-      </p>
+      <p>Join us to spruce up local parks. Then unwind with a group stretch session and community barbecue celebrating our efforts to keep the neighborhood healthy and green.</p>
     </div>
 
     <div class="action-wrapper">
-      <!-- Sign-up hook -->
       <button id="sign-up-btn" class="action-btn">Sign Up</button>
     </div>
   </main>
@@ -174,7 +229,6 @@
       </div>
     </div>
 
-    <!-- Newsletter Signup -->
     <div class="newsletter-area">
       <input
         id="subscribe-email"
