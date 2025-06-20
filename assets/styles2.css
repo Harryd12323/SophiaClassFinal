@@ -1,134 +1,247 @@
-/* Hero Section Styles (Color Palette 2 & Typography Option 2) */
-.hero-banner {
-  background-color: var(--nourish-navy);
-  color: var(--white);
+/* ---------------------------------------------------------------------------
+   Global Reset & Color Palette 2 + Typography Option 2
+-------------------------------------------------------------------------------- */
+:root {
+  --nourish-navy:  #001F3F;
+  --bootcamp-blue: #20458E;
+  --boxjump-blue:  #155EBC;
+  --wellness-gray: #D3D3D3;
+  --white:         #FFFFFF;
+}
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Calibri, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333333;
+  background-color: var(--wellness-gray);
+}
+
+/* ---------------------------------------------------------------------------
+   Header
+-------------------------------------------------------------------------------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.header-logo {
+  height: 50px;
+}
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: var(--nourish-navy);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.main-navigation ul {
+  list-style: none;
+  display: flex;
+}
+.main-navigation li {
+  margin-left: 20px;
+}
+.main-navigation a {
+  font-family: Calibri, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--nourish-navy);
+  text-decoration: none;
+}
+.main-navigation a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------------------------------
+   Promotional Notice (Hero Section)
+-------------------------------------------------------------------------------- */
+.promo-banner {
+  background-color: var(--white);
+  color: var(--nourish-navy);
   text-align: center;
   padding: 60px 20px;
 }
-.hero-banner h1 {
+.promo-banner h1 {
   font-family: Arial, sans-serif;
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-.hero-banner p {
+.promo-banner p {
   font-family: Calibri, sans-serif;
   font-size: 16px;
-  margin-bottom: 0;
 }
 
-/* Company Overview / Mission */
-.story-section {
-  background-color: var(--white);
+/* ---------------------------------------------------------------------------
+   Offerings Section
+-------------------------------------------------------------------------------- */
+.offerings-section {
   padding: 40px 20px;
-}
-.story-section h2 {
-  font-family: Arial, sans-serif;
-  font-size: 25px;
-  font-weight: bold;
-  color: var(--nourish-navy);
-  margin-bottom: 20px;
-}
-.story-section p {
-  font-family: Calibri, sans-serif;
-  font-size: 16px;
-  color: #333333;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-/* Staff Area */
-.staff-area {
-  background-color: var(--wellness-gray);
-  padding: 40px 20px;
-}
-.staff-area h2 {
-  font-family: Arial, sans-serif;
-  font-size: 25px;
-  font-weight: bold;
-  color: var(--nourish-navy);
   text-align: center;
+  background-color: var(--white);
+}
+.offerings-section h2 {
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
   margin-bottom: 20px;
+  color: var(--nourish-navy);
 }
-.staff-list {
+.offer-cards {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
   justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }
-.staff-card {
-  background: var(--white);
-  border: 1px solid #DDD;
+.card {
+  background-color: var(--white);
+  border: 1px solid #ddd;
   border-radius: 8px;
   width: calc(33.333% - 13.333px);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  padding: 20px;
-  text-align: center;
-}
-.staff-card img {
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-.staff-card h3 {
-  font-family: Arial, sans-serif;
-  font-size: 25px;
-  font-weight: bold;
-  color: var(--nourish-navy);
-  margin-bottom: 0.5rem;
-}
-
-/* Reach-Out Section */
-.reach-section {
-  background: var(--white);
-  padding: 40px 20px;
-}
-.reach-section h2 {
-  font-family: Arial, sans-serif;
-  font-size: 25px;
-  font-weight: bold;
-  color: var(--nourish-navy);
-  text-align: center;
-  margin-bottom: 20px;
-}
-.inquiry-form {
-  max-width: 500px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
-.inquiry-form input,
-.inquiry-form textarea {
-  padding: 10px;
-  border: 1px solid #DDD;
-  border-radius: 4px;
-  font-family: Calibri, sans-serif;
-  font-size: 16px;
+.card img {
+  width: 100%;
+  height: auto;
 }
-.inquiry-form .submit-button {
-  background-color: var(--bootcamp-blue);
-  color: var(--white);
-  border: none;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: Calibri, sans-serif;
-  font-size: 16px;
+.card h3 {
+  font-family: Arial, sans-serif;
+  font-size: 25px;
   font-weight: bold;
+  margin: 15px;
+  color: var(--nourish-navy);
 }
-.inquiry-form .submit-button:hover {
+.card p {
+  font-family: Calibri, sans-serif;
+  font-size: 16px;
+  flex-grow: 1;
+  margin: 0 15px 15px;
+  color: #555;
+}
+.action-btn {
+  font-family: Calibri, sans-serif;
+  font-size: 16px;
+  display: inline-block;
+  margin: 0 15px 15px;
+  padding: 10px 15px;
+  background-color: var(--nourish-navy);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+}
+.action-btn:hover {
   background-color: var(--boxjump-blue);
 }
 
-/* Mobile Responsive */
+/* ---------------------------------------------------------------------------
+   Member Reviews Section
+-------------------------------------------------------------------------------- */
+.reviews-section {
+  background-color: var(--white);
+  padding: 40px 20px;
+}
+.reviews-section h2 {
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--nourish-navy);
+}
+.review {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+.review blockquote {
+  font-family: Calibri, sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+.review blockquote::before {
+  content: "“";
+  font-size: 2rem;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  color: var(--white);
+}
+.review cite {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  display: block;
+  color: #777;
+}
+
+/* ---------------------------------------------------------------------------
+   Footer
+-------------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--nourish-navy);
+  color: var(--white);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.contact-details p {
+  font-family: Calibri, sans-serif;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.legal-links a {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--white);
+  text-decoration: none;
+  margin-right: 15px;
+}
+.legal-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------------------------------
+   Responsive Adjustments (Mobile)
+-------------------------------------------------------------------------------- */
 @media (max-width: 768px) {
-  .staff-list {
+  .main-navigation ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--nourish-navy);
+    width: 100%;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .offer-cards {
     flex-direction: column;
   }
-  .staff-card {
+  .card {
     width: 100%;
+  }
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .legal-links a {
+    margin: 5px;
   }
 }
