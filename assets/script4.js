@@ -1,5 +1,5 @@
 // assets/script4.js
-// User interaction alerts for contact and newsletter sign-up
+// User interaction alerts for contact and subscribe 
 
 document.addEventListener('DOMContentLoaded', () => {
   // ==== Reach-Out Notification ====

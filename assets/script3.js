@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ==== Newsletter Sign-Up Validation ====
+  // ==== Subscribe Validation ====
   const subscriptionBtn = document.getElementById('subscribe-btn');
   const emailField      = document.getElementById('subscribe-email');
 

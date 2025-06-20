@@ -80,7 +80,7 @@
     margin-bottom: 0.5rem;
 }
 
-/* Reach-Out Section */
+/* Reach Section */
 .reach-section {
     background: var(--white);
     padding: 40px 20px;
@@ -123,7 +123,7 @@
     background-color: var(--boxjump-blue);
 }
 
-/* Mobile Responsive */
+/* Mobile device */
 @media (max-width: 768px) {
     .staff-list {
       flex-direction: column;

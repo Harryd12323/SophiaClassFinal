@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   // —— Add-to-Cart buttons ——
-  // changed selector from '.add-to-cart-btn' to '.cart-btn' to match HTML buttons
   document.querySelectorAll('.cart-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       alert('Item added to the cart');
