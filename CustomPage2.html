@@ -86,7 +86,6 @@
     .event-block {
       margin-bottom: 2.5rem;
     }
-    /* Removed empty .event-block h2 rule to satisfy linting */
     .event-block p {
       margin-bottom: 1.25rem;
     }
@@ -97,6 +96,7 @@
       justify-content: center;
       margin: 2rem 0;
     }
+    /* Changed to anchor for navigation */
     .action-btn {
       font: 16px Calibri, sans-serif;
       background: var(--bootcamp-blue);
@@ -106,6 +106,8 @@
       border-radius: 999px;
       cursor: pointer;
       transition: background-color 0.2s;
+      display: inline-block;
+      text-align: center;
     }
     .action-btn:hover {
       background: var(--boxjump-blue);
@@ -117,6 +119,7 @@
       padding: 2rem 1rem;
       font-family: Calibri, sans-serif;
       font-size: 16px;
+      margin-top: auto; /* push footer to bottom */
     }
     .footer-grid {
       display: flex;
@@ -202,7 +205,7 @@
     </div>
 
     <div class="action-wrapper">
-      <button id="sign-up-btn" class="action-btn">Sign Up</button>
+      <a href="AboutUs2.html" class="action-btn">Sign Up</a>
     </div>
   </main>
 
