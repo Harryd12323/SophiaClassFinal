@@ -1,247 +1,134 @@
-/* --------------------------------------------------------------------------------
-   Base Reset & Typography
--------------------------------------------------------------------------------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f7f7f7;
-}
-
-/* --------------------------------------------------------------------------------
-   Header
--------------------------------------------------------------------------------- */
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #17253f;   /* dark navy */
-  padding: 10px 20px;
-}
-
-.header-logo {
-  height: 50px;
-}
-
-.menu-toggle {
-  display: none;               /* hidden on desktop; shown in responsive */
-  font-size: 24px;
-  color: #fff;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Top-nav links */
-.main-navigation ul {
-  list-style: none;
-  display: flex;
-}
-
-.main-navigation li {
-  margin-left: 20px;
-}
-
-.main-navigation a {
-  color: #f7f7f7;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.main-navigation a:hover {
-  text-decoration: underline;
-}
-
-/* --------------------------------------------------------------------------------
-   Promo Banner (Hero Section)
--------------------------------------------------------------------------------- */
-.promo-banner {
-  background-color: #f7f7f7;  
-  color: #17253F;
+/* Hero Section Styles (Color Palette 2 & Typography Option 2) */
+.hero-banner {
+  background-color: var(--nourish-navy);
+  color: var(--white);
   text-align: center;
   padding: 60px 20px;
 }
-
-.promo-banner h1 {
-  font-size: 2rem;
+.hero-banner h1 {
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
   margin-bottom: 10px;
 }
-
-.promo-banner p {
-  font-size: 1.2rem;
+.hero-banner p {
+  font-family: Calibri, sans-serif;
+  font-size: 16px;
+  margin-bottom: 0;
 }
 
-/* --------------------------------------------------------------------------------
-   Offerings Section
--------------------------------------------------------------------------------- */
-.offerings-section {
+/* Company Overview / Mission */
+.story-section {
+  background-color: var(--white);
   padding: 40px 20px;
-  text-align: center;
-  background-color: #f7f7f7;
 }
-
-.offerings-section h2 {
-  font-size: 1.8rem;
+.story-section h2 {
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--nourish-navy);
   margin-bottom: 20px;
 }
-
-.offer-cards {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
+.story-section p {
+  font-family: Calibri, sans-serif;
+  font-size: 16px;
+  color: #333333;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
-.card {
-  background-color: #fff;
-  border: 1px solid #ddd;
+/* Staff Area */
+.staff-area {
+  background-color: var(--wellness-gray);
+  padding: 40px 20px;
+}
+.staff-area h2 {
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--nourish-navy);
+  text-align: center;
+  margin-bottom: 20px;
+}
+.staff-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+.staff-card {
+  background: var(--white);
+  border: 1px solid #DDD;
   border-radius: 8px;
-  width: calc(33.333% - 13.333px); /* three cards per row with 20px gap */
+  width: calc(33.333% - 13.333px);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+}
+.staff-card img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.staff-card h3 {
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--nourish-navy);
+  margin-bottom: 0.5rem;
+}
+
+/* Reach-Out Section */
+.reach-section {
+  background: var(--white);
+  padding: 40px 20px;
+}
+.reach-section h2 {
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--nourish-navy);
+  text-align: center;
+  margin-bottom: 20px;
+}
+.inquiry-form {
+  max-width: 500px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
-
-.card img {
-  width: 100%;
-  height: auto;
-}
-
-.card h3 {
-  font-size: 1.4rem;
-  margin: 15px;
-}
-
-.card p {
-  flex-grow: 1;
-  margin: 0 15px 15px 15px;
-  color: #555;
-}
-
-.action-btn {
-  display: inline-block;
-  margin: 0 15px 15px 15px;
-  padding: 10px 15px;
-  background-color: #17253F;  /* same dark navy as header */
-  color: #fff;
-  text-decoration: none;
+.inquiry-form input,
+.inquiry-form textarea {
+  padding: 10px;
+  border: 1px solid #DDD;
   border-radius: 4px;
-  text-align: center;
+  font-family: Calibri, sans-serif;
+  font-size: 16px;
+}
+.inquiry-form .submit-button {
+  background-color: var(--bootcamp-blue);
+  color: var(--white);
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Calibri, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+.inquiry-form .submit-button:hover {
+  background-color: var(--boxjump-blue);
 }
 
-.action-btn:hover {
-  background-color: #0f1f30;   /* slightly darker navy on hover */
-}
-
-/* --------------------------------------------------------------------------------
-   Member Reviews Section
--------------------------------------------------------------------------------- */
-.reviews-section {
-  background-color: #fff;
-  padding: 40px 20px;
-}
-
-.reviews-section h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-}
-
-.review {
-  max-width: 600px;
-  margin: 0 auto 20px auto;
-  text-align: center;
-}
-
-.review blockquote {
-  font-style: italic;
-  color: #555;
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 20px;
-}
-
-.review blockquote::before {
-  content: "“";
-  font-size: 2rem;
-  position: absolute;
-  left: 0;
-  top: -10px;
-  color: #ffffff;  /* match promo-banner accent */
-}
-
-.review cite {
-  display: block;
-  font-size: 0.9rem;
-  color: #777;
-}
-
-/* --------------------------------------------------------------------------------
-   Footer
--------------------------------------------------------------------------------- */
-.site-footer {
-  background-color: #17253F;  /* dark navy */
-  color: #fff;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.contact-details p {
-  margin-bottom: 8px;
-}
-
-.legal-links a {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 15px;
-  font-size: 0.9rem;
-}
-
-.legal-links a:hover {
-  text-decoration: underline;
-}
-
-/* --------------------------------------------------------------------------------
-   Responsive Adjustments (Mobile)
--------------------------------------------------------------------------------- */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  /* Collapse nav into hamburger */
-  .main-navigation ul {
-    display: none;
+  .staff-list {
     flex-direction: column;
-    background-color: #17253F;
+  }
+  .staff-card {
     width: 100%;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  /* Make cards stack */
-  .offer-cards {
-    flex-direction: column;
-  }
-
-  .card {
-    width: 100%;            /* full-width cards on small screens */
-  }
-
-  /* Footer stacks */
-  .site-footer {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .legal-links a {
-    margin: 5px;            /* smaller gaps between footer links */
   }
 }

@@ -1,45 +1,52 @@
-/* ---------------------------------------------------------------------------
-   Hero Section Styles (mirrors homepage palette & layout)                
--------------------------------------------------------------------------------- */
-
-/* —— Hero Banner —— */
+/* Hero Section Styles (Color Palette 2 & Typography Option 2) */
 .hero-banner {
-    background-color: #373E8B;    /* same as .promo-banner */
-    color: #fff;
+    background-color: var(--nourish-navy);
+    color: var(--white);
     text-align: center;
     padding: 60px 20px;
 }
 .hero-banner h1 {
-    font-size: 2rem;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 .hero-banner p {
-    font-size: 1.2rem;
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
+    margin-bottom: 0;
 }
 
-/* —— Company Overview / Mission —— */
+/* Company Overview / Mission */
 .story-section {
-    background-color: #fff;
+    background-color: var(--white);
     padding: 40px 20px;
 }
 .story-section h2 {
-    color: #17253F;                /* dark navy */
-    font-size: 1.8rem;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--nourish-navy);
     margin-bottom: 20px;
 }
 .story-section p {
-    color: #333;                   /* main text color */
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
+    color: #333333;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
 
-/* —— Staff Area —— */
+/* Staff Area */
 .staff-area {
-    background-color: #F7F7F7;     /* light gray body bg */
+    background-color: var(--wellness-gray);
     padding: 40px 20px;
 }
 .staff-area h2 {
-    color: #17253F;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--nourish-navy);
     text-align: center;
     margin-bottom: 20px;
 }
@@ -50,7 +57,7 @@
     justify-content: space-between;
 }
 .staff-card {
-    background: #fff;
+    background: var(--white);
     border: 1px solid #DDD;
     border-radius: 8px;
     width: calc(33.333% - 13.333px);
@@ -66,17 +73,23 @@
     margin-bottom: 15px;
 }
 .staff-card h3 {
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--nourish-navy);
     margin-bottom: 0.5rem;
-    color: #17253F;
 }
 
-/* —— Reach-Out Section —— */
+/* Reach-Out Section */
 .reach-section {
-    background: #fff;
+    background: var(--white);
     padding: 40px 20px;
 }
 .reach-section h2 {
-    color: #17253F;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--nourish-navy);
     text-align: center;
     margin-bottom: 20px;
 }
@@ -92,21 +105,25 @@
     padding: 10px;
     border: 1px solid #DDD;
     border-radius: 4px;
-    font-size: 1rem;
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
 }
 .inquiry-form .submit-button {
-    background-color: #17253F;
-    color: #fff;
+    background-color: var(--bootcamp-blue);
+    color: var(--white);
     border: none;
     padding: 10px;
     border-radius: 4px;
     cursor: pointer;
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
 }
 .inquiry-form .submit-button:hover {
-    background-color: #0F1F30;
+    background-color: var(--boxjump-blue);
 }
 
-/* —— Mobile Responsive —— */
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .staff-list {
       flex-direction: column;
