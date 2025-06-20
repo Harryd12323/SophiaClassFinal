@@ -1,85 +1,62 @@
-// assets/script.js
-// Manages footer subscription, gallery cart actions, and contact form alerts
-
+// assets/storage.js
 document.addEventListener('DOMContentLoaded', () => {
-  // ==== Footer Newsletter Signup ====
-  const footerSubscribeBtn = document.getElementById('subscribe-btn');
-  if (footerSubscribeBtn) {
-    footerSubscribeBtn.addEventListener('click', () => {
-      const emailField = document.getElementById('subscribe-email');
-      if (emailField && emailField.value.trim() !== '') {
-        alert('Thanks for subscribing!');
-        emailField.value = '';
-      } else {
-        alert('Enter a valid email to subscribe.');
-      }
-    });
-  }
-
-  // ==== Gallery Cart Controls ====  
-  let tempCart = [];
-  document.querySelectorAll('.add-to-cart-btn').forEach(addBtn => {
-    addBtn.addEventListener('click', () => {
-      tempCart.push('item');
-      alert('Item successfully added to cart.');
-    });
-  });
-
-  const clearBtn = document.getElementById('clear-cart-btn');
-  if (clearBtn) {
-    clearBtn.addEventListener('click', () => {
-      if (tempCart.length) {
-        tempCart = [];
-        alert('Your cart has been cleared.');
-      } else {
-        alert('No items in the cart to clear.');
-      }
-    });
-  }
-
-  const orderBtn = document.getElementById('process-order-btn');
-  if (orderBtn) {
-    orderBtn.addEventListener('click', () => {
-      if (tempCart.length) {
-        alert('Order placed! Thank you.');
-        tempCart = [];
-      } else {
-        alert('Cart is empty, nothing to process.');
-      }
-    });
-  }
-
-  // ==== Contact Form Submission ====
-  const formElement = document.getElementById('contact-form');
-  if (formElement) {
-    formElement.addEventListener('submit', evt => {
-      evt.preventDefault();
-      alert('We received your message—thank you!');
-      formElement.reset();
-    });
-  }
-});
-document.addEventListener('DOMContentLoaded', () => {
-  // —— Add-to-Cart buttons ——
+  // —— Add-to-Cart → sessionStorage ——
   document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
     btn.addEventListener('click', () => {
+      const cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
+      cart.push({ id: btn.dataset.id, name: btn.dataset.name });
+      sessionStorage.setItem('cart', JSON.stringify(cart));
       alert('Item added to the cart');
     });
   });
 
-  // —— Subscribe feature ——
-  const subscribeBtn = document.getElementById('subscribe-btn');
-  const emailInput  = document.getElementById('subscribe-email');
+  // —— Clear Cart ——
+  const clearBtn = document.getElementById('clear-cart-btn');
+  if (clearBtn) clearBtn.addEventListener('click', () => {
+    const cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
+    if (cart.length) {
+      sessionStorage.removeItem('cart');
+      alert('Cart cleared');
+    } else {
+      alert('No items to clear');
+    }
+  });
 
-  if (subscribeBtn && emailInput) {
-    subscribeBtn.addEventListener('click', () => {
-      const email = emailInput.value.trim();
-      if (email) {
-        alert('Thank you for subscribing');
-        emailInput.value = '';
-      } else {
-        alert('Please enter an email address');
-      }
-    });
-  }
+  // —— Process Order ——
+  const orderBtn = document.getElementById('process-order-btn');
+  if (orderBtn) orderBtn.addEventListener('click', () => {
+    const cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
+    if (cart.length) {
+      sessionStorage.removeItem('cart');
+      alert('Thank you for your order');
+    } else {
+      alert('Cart is empty');
+    }
+  });
+
+  // —— Subscribe (all pages) ——
+  const subBtn   = document.getElementById('subscribe-btn');
+  const subInput = document.getElementById('subscribe-email');
+  if (subBtn && subInput) subBtn.addEventListener('click', () => {
+    if (subInput.value.trim()) {
+      alert('Thank you for subscribing');
+      subInput.value = '';
+    } else {
+      alert('Please enter an email address');
+    }
+  });
+
+  // —— Contact Form (About Us) ——
+  const form = document.getElementById('contact-form');
+  if (form) form.addEventListener('submit', e => {
+    e.preventDefault();
+    const data = {
+      name:    form.querySelector('#name').value,
+      email:   form.querySelector('#email').value,
+      message: form.querySelector('#message').value
+    };
+    localStorage.setItem('order', JSON.stringify(data));
+    alert('Thank you for your message');
+    form.reset();
+  });
 });
