@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ABC Fitness Studio</title>
   <link rel="stylesheet" href="./assets/styles2.css">
+  <!-- hook in storage.js for subscribe (and cart/form on other pages) -->
   <script src="./assets/storage.js" defer></script>
   <script src="./assets/script.js" defer></script>
 </head>
@@ -18,7 +18,7 @@
     <nav class="main-navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="Gallery2.html">Our Classes</a></li>
+        <li><a href="Gallery2.html">Our Offerings</a></li>
         <li><a href="AboutUs2.html">About Us</a></li>
         <li><a href="CustomPage2.html">Events</a></li>
       </ul>
@@ -27,50 +27,50 @@
 
   <!-- Promotional Notice -->
   <section class="promo-banner">
-    <h1>Kickstart Your Fitness with Half-Price Membership!</h1>
-    <p>Exclusive offer for new members. Join today and save big.</p>
+    <h1>Start Your Fitness Journey with 50% Off!</h1>
+    <p>Limited-time deal for new members. Join now and save.</p>
   </section>
 
   <!-- Offerings -->
   <section id="offerings" class="offerings-section">
-    <h2>Our Services</h2>
+    <h2>What We Offer</h2>
     <div class="offer-cards">
       <article class="card">
         <img src="./assets/Client2_IndividualKickboxing.png" alt="One-on-One Coaching">
-        <h3>Personal Training</h3>
-        <p>Tailored sessions focused on your goals.</p>
-        <a href="Gallery2.html" class="action-btn">Learn More</a>
+        <h3>Personal Coaching</h3>
+        <p>Customized sessions designed around you.</p>
+        <a href="Gallery2.html" class="action-btn">Discover More</a>
       </article>
       <article class="card">
-        <img src="./assets/Client2_GroupPilates.png" alt="Group Pilates">
-        <h3>Group Workouts</h3>
-        <p>Dynamic classes for every fitness level.</p>
-        <a href="Gallery2.html" class="action-btn">Sign Up</a>
+        <img src="./assets/Client2_GroupPilates.png" alt="Fitness Classes">
+        <h3>Group Classes</h3>
+        <p>Energizing group workouts for all levels.</p>
+        <a href="Gallery2.html" class="action-btn">Join a Class</a>
       </article>
       <article class="card">
-        <img src="./assets/Client2_WaterBottle.png" alt="Branded Water Bottle">
-        <h3>Merch & Gear</h3>
-        <p>Gear up for home workouts with our merch.</p>
-        <a href="Gallery2.html" class="action-btn">Shop Now</a>
+        <img src="./assets/Client2_WaterBottle.png" alt="Gym Merch">
+        <h3>Gym Merch</h3>
+        <p>Workout from home with expert guidance.</p>
+        <a href="Gallery2.html" class="action-btn">Buy Now</a>
       </article>
     </div>
   </section>
 
   <!-- Member Reviews -->
   <section id="reviews" class="reviews-section">
-    <h2>Success Stories</h2>
+    <h2>Member Stories</h2>
     <div class="review">
-      <blockquote>“Joining ABC Fitness Studio changed my life. The coaches really push me to be my best.”</blockquote>
+      <blockquote>“Joining ABC Fitness Studio was the best decision ever. The trainers truly care about my progress.”</blockquote>
       <cite>— Alex P.</cite>
     </div>
     <div class="review">
-      <blockquote>“Amazing atmosphere and personalized support. I feel more confident and strong.”</blockquote>
+      <blockquote>“Fantastic classes and personalised support. I feel stronger and more confident every day.”</blockquote>
       <cite>— Jamie L.</cite>
     </div>
   </section>
 
   <!-- Footer with Subscribe -->
-  <footer id="footer-info" class="site-footer">
+  <footer id="info" class="site-footer">
     <div class="contact-details">
       <p>Address: 11 ABC Ave, New Jersey 01010</p>
       <p>Email: info@abcfitness.com</p>
@@ -82,6 +82,7 @@
       <a href="support.html">Support</a>
     </div>
 
+    <!-- Subscribe hook -->
     <div class="subscribe-section">
       <input
         id="subscribe-email"
@@ -89,10 +90,9 @@
         placeholder="Your email address"
         aria-label="Email for subscription"
       >
-      <button id="subscribe-btn" class="action-btn">Subscribe</button>
+      <button id="subscribe-btn" class="btn">Subscribe</button>
     </div>
   </footer>
 
 </body>
 </html>
-```
